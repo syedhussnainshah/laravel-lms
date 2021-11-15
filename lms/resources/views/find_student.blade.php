@@ -35,6 +35,7 @@
                    <div class="row">
                     @foreach($student_classses as $key=>$classes)
                        <div class="col-md-2"><a href="{{ url('show_class_student', $classes->id) }}" class="edit" ><i class="material-icons"  title="Edit">&#xE254;</i>{{$classes->class_name}}</a></div>
+                       
                        @endforeach
                       
 

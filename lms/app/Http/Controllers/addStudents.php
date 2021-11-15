@@ -76,6 +76,8 @@ public function student_class(Request $request)
 	->select('add_students.id','add_students.std_class','add_students.std_name','add_students.std_reg_no','add_students.std_rol_no','section.section_name','student_class.class_name','std_gen.gen_name')
 	->get();
 	// $stdudent_class = DB::select('select * from student_class');
+    // Session::get($id);
+
 	return view ('single_class_student',compact('class_student'));
 }
 
