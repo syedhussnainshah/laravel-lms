@@ -1,4 +1,12 @@
-<form class="row g-4" method="POST" action="{{route('std_create')}}">
+
+ <div class="container classes_box">
+                   <div class="row">
+                    hello
+                {{Auth::user()->email}}
+                      
+
+                   </div>
+<form class="row g-4" method="POST" action="{{route('std_create')}}" enctype="multipart/form-data">
     @csrf
     <div class="col-md-6">
         <label class="form-label">Registration No</label>
@@ -33,13 +41,13 @@
             <option value="2">Section B</option>
         </select>
     </div>
-    <!-- <div class="col-md-6 mt-3 mt-md-5">
+    <div class="col-md-6 mt-3 mt-md-5">
         <label class="form-label">Student Image</label>
         <div class="admittion-img">
             <img src="assets/images/student-img/img_avatar.png" alt="Student Image">
         </div>
-        <input type="file" class="form-control">
-    </div> -->
+        <input type="file" name="std_image" class="form-control">
+    </div>
     <div class="col-md-6">
         <div class="my-3">
             <label class="form-label">Student Name</label>

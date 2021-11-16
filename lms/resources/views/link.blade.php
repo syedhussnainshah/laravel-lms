@@ -14,5 +14,6 @@
 <!-- Custom CSS File -->
 <link rel="stylesheet" href="{{asset('assets/	css/style.css')}}">
  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
 

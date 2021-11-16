@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <!-- CSS FIle Included -->
-    <?php include_once 'link.php' ?>
+@extends('link') 
+   
 </head>
 <body style="margin-left: 0px; margin-top: 0px;">
 
@@ -16,37 +17,38 @@
                         <p class="text-center my-3">Already have an account? <a href="login.php"
                                 class="text-primarycolor fw-bold">Login</a></p>
 
-                        <form>
+                        <form method="post" class="row g-4" method="POST" action="{{route('add_reg')}}" enctype="multipart/form-data">
+                            @csrf
                             <div class="row g-3 mb-4">
                                 <div class="col-sm-6 p-0">
                                     <div class="p-1">
                                         <h6>First Name</h6>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="fname">
                                     </div>
                                 </div>
                                 <div class="col-sm-6 p-0">
                                     <div class="p-1">
                                         <h6>Last Name</h6>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="lname">
                                     </div>
                                 </div>
                             </div>
                             <div class="mb-4">
                                 <h6>Email</h6>
-                                <input type="email" class="form-control">
+                                <input type="email" class="form-control" name="email">
                             </div>
 
                             <div class="mb-4">
                                 <h6>Password</h6>
-                                <input type="password" class="form-control">
+                                <input type="password" class="form-control" name="password">
                             </div>
 
                             <div class="mb-4">
                                 <h6>Confirm Password</h6>
-                                <input type="password" class="form-control">
+                                <input type="password" class="form-control" name="cpassword">
                             </div>
                             <div class="my-4">
-                                <button type="submit" class="btn">Sign up</button>
+                                <button type="submit" name="submit" class="btn">Sign up</button>
                             </div>
 
                             <div>
@@ -69,6 +71,6 @@
     <!-- Section 1 End Here -->
 
     <!-- JS File included -->
-    <?php include_once 'jslink.php' ?>
+    @extends('jslink') 
 </body>
 </html>

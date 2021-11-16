@@ -22,6 +22,7 @@ class CreateAddStudentsTable extends Migration
             $table->int('std_section');
             $table->int('std_by_cnic');
             $table->int('std_gen');
+            // $table->string('std_image');
             // $table->string('std_dob');
             // $table->int('std_rligion');
             // $table->string('std_father_name');

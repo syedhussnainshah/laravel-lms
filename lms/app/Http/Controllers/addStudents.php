@@ -18,6 +18,21 @@ class addStudents extends Controller
         $save->std_section = $request->std_section;
         $save->std_by_cnic = $request->std_by_cnic;
         $save->std_gen = $request->std_gen;
+        // $size = $request->file('std_image')->getSize();
+        // $name = $request->file('std_image')->getClientOriginalName();
+        // $save->file('std_image')->store('public/assets/image');
+
+
+        // if ($request->hash('std_image')) {
+        //     $file = $request->file('std_image');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$extension;
+        //     $file->move('assets/image',$filename);
+        //     $save->std_image=$filename;
+        // }else{
+        //     return $request;
+        //     $save->std_image = "";
+        // }
         // $save->std_dob = $request->std_dob;
         // $save->std_rligion = $request->std_rligion;
         // $save->std_father_name = $request->std_father_name;

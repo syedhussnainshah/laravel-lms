@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- CSS FIle Included -->
-    <?php include_once 'link.php' ?>
+@extends('link') 
 </head>
 <body style="margin-left: 0px; margin-top: 0px;">
 
@@ -16,15 +16,16 @@
                         <p class="text-center my-3">New to Al Sadat School? <a href="signup.php"
                                 class="text-primarycolor fw-bold">Create an account</a></p>
 
-                        <form>
+                        <form method="POST" action="{{route('user_login')}}">
+                            @csrf
                             <div class="mb-4">
                                 <h6>Email</h6>
-                                <input type="email" class="form-control">
+                                <input type="email" name="email" class="form-control">
                             </div>
 
                             <div class="mb-4">
                                 <h6>Password</h6>
-                                <input type="password" class="form-control">
+                                <input type="password" name="password" class="form-control">
                             </div>
                             <div class="d-flex justify-content-between flex-wrap">
                                 <div class="d-flex justify-content-center align-items-center">
@@ -36,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="my-4">
-                                <button type="submit" class="btn">Log in</button>
+                                <button type="submit" name="submit" class="btn">Log in</button>
                             </div>
 
                             <div>
@@ -59,6 +60,6 @@
     <!-- Section 1 End Here -->
 
     <!-- JS File included -->
-    <?php include_once 'jslink.php' ?>
+ @extends('jslink') 
 </body>
 </html>
