@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
     <!-- CSS FIle Included -->
 @extends('link') 
    
-</head>
+
 <body style="margin-left: 0px; margin-top: 0px;">
 
     <!-- Section 1 Start Here -->
@@ -17,7 +15,7 @@
                         <p class="text-center my-3">Already have an account? <a href="login.php"
                                 class="text-primarycolor fw-bold">Login</a></p>
 
-                        <form method="post" class="row g-4" method="POST" action="{{route('add_reg')}}" enctype="multipart/form-data">
+                        <form method="POST" class="row g-4" action="{{route('add_reg')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row g-3 mb-4">
                                 <div class="col-sm-6 p-0">
@@ -73,4 +71,4 @@
     <!-- JS File included -->
     @extends('jslink') 
 </body>
-</html>
+<!-- </html> -->

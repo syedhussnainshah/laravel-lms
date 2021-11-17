@@ -24,16 +24,22 @@ class singup extends Controller
     }
     public function user_login(Request $request)
     {
-    	$email = $register->email;
-    	$password = $request->password;
-    	
-    $class_student = DB::table('add_students')
-	->where('std_class',$id)
-    ->where('std_gen', 2)
-	->join('student_class','student_class.id','=','add_students.std_class')
-    ->join('section','section.id','=','add_students.std_section')
-	->join('std_gen','std_gen.id','=','add_students.std_gen')
-	->select('add_students.id','add_students.std_class','add_students.std_name','add_students.std_reg_no','add_students.std_rol_no','section.section_name','student_class.class_name','std_gen.gen_name')
-	->get();
+    	// $email = $register->email;
+    	// $password = $request->password;
+    	$request->validate([
+    		'email'=>'required|email',
+    		'password'=>'required|min:5|max:12'
+    	]);
+    	$userInfo = register::where('email','=',$request->email)->first();
+    	if (!$userInfo) {
+    		return back()->with('fail','We do not recognized your email');
+    	}else{
+    		if ($request->password,$userInfo->password) {
+    			$request->session()->put('loggedUser','$userInfo->id');
+    			return redirect('add_student');
+    		}else{
+    			return back()->with('fail','INccorect Passowrd');
+    		}
+    	}
     }
 }

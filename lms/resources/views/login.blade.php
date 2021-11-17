@@ -16,8 +16,13 @@
                         <p class="text-center my-3">New to Al Sadat School? <a href="signup.php"
                                 class="text-primarycolor fw-bold">Create an account</a></p>
 
-                        <form method="POST" action="{{route('user_login')}}">
+                        <form method="get" action="{{route('user_login')}}">
                             @csrf
+                            @if(Session::get('fail'))
+                            <div class="alert alert-danger">
+                                {{ Session::get('fail')}}
+                            </div>
+                            @endif
                             <div class="mb-4">
                                 <h6>Email</h6>
                                 <input type="email" name="email" class="form-control">
