@@ -34,7 +34,6 @@
     
     <!-- JS File included -->
 
-    @extends('jslink') 
 
 </body>
 </html>

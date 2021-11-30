@@ -30,6 +30,9 @@ Route::get('/login', function () {
 Route::get('/singup', function () {
     return view('signup');
 });
+Route::get('/find_student', function () {
+    return view('find_student');
+});
 
 
 
